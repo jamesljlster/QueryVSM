@@ -7,7 +7,7 @@ using System.IO;
 
 namespace QueryVSM
 {
-    class VectorSpaceModel
+    partial class VectorSpaceModel
     {
         // Constructor
         public VectorSpaceModel()
@@ -145,6 +145,27 @@ namespace QueryVSM
             }
 
             return docWeight;
+        }
+
+        // Function: Get ranked document list
+        public String[] get_ranked_doc(String queryTerm)
+        {
+            String[] rankedDoc = new String[this.docList.Count];
+
+            // Insert query term as a documen
+            this.add_doc(queryTerm);
+
+            // Get document weight vector
+            double[][] docVector = this.get_doc_weight();
+
+            // Calculate similarity of each document with query term
+            double[] docCosine = new double[docVector.Length];
+            for(int i = 0; i < docVector.Length - 1; i++)
+            {
+                docCosine[i] = this.vector_cos(docVector[docVector.Length - 1], docVector[i]);
+            }
+
+            return rankedDoc;
         }
     }
 }
