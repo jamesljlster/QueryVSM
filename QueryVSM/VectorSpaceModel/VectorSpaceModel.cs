@@ -152,7 +152,7 @@ namespace QueryVSM
         {
             String[] rankedDoc = new String[this.docList.Count];
 
-            // Insert query term as a documen
+            // Insert query term as a document
             this.add_doc(queryTerm);
 
             // Get document weight vector
@@ -172,9 +172,13 @@ namespace QueryVSM
                 docIndex[i] = i;
             }
             Array.Sort(docCosine, docIndex);
-            
+
+            // Remove query term
+            this.docBakList.RemoveAt(this.docBakList.Count - 1);
+            this.docList.RemoveAt(this.docBakList.Count - 1);
+
             // Return ranked document
-            for(int i = 0; i < docIndex.Length; i++)
+            for (int i = 0; i < docIndex.Length; i++)
             {
                 rankedDoc[i] = this.docBakList[docIndex.Length - 1 - docIndex[i]];
             }
