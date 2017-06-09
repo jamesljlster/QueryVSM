@@ -55,7 +55,7 @@ namespace QueryVSM
                     {
                         tmp += tmpNodeList[j].InnerText + "\r\n";
                     }
-                    docInfo.abstruct = tmp;
+                    docInfo.abstractText = tmp;
                 }
 
                 // Get author info
@@ -172,7 +172,7 @@ namespace QueryVSM
                     {
                         tmp += tmpNodeList[j].InnerText + "\r\n";
                     }
-                    docInfo.abstruct = tmp;
+                    docInfo.abstractText = tmp;
                 }
 
                 // Get author info

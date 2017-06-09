@@ -14,7 +14,7 @@ namespace QueryVSM
             public DocInfo()
             {
                 this.title = null;
-                this.abstruct = null;
+                this.abstractText = null;
                 this.authorInfo = null;
             }
 
@@ -33,9 +33,9 @@ namespace QueryVSM
                     tmp += "Author Info:\r\n" + this.authorInfo + "\r\n\r\n";
                 }
 
-                if (this.abstruct != null)
+                if (this.abstractText != null)
                 {
-                    tmp += "Abstruct:\r\n" + this.abstruct + "\r\n\r\n";
+                    tmp += "Abstract:\r\n" + this.abstractText + "\r\n\r\n";
                 }
 
                 return tmp;
@@ -56,16 +56,16 @@ namespace QueryVSM
                     text += this.authorInfo;
                 }
 
-                if (this.abstruct != null)
+                if (this.abstractText != null)
                 {
-                    text += this.abstruct;
+                    text += this.abstractText;
                 }
 
                 return text;
             }
 
             public String title;
-            public String abstruct;
+            public String abstractText;
             public String authorInfo;
         }
     }
