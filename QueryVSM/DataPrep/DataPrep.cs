@@ -69,16 +69,20 @@ namespace QueryVSM
                         tmpNode = tmpNodeList[j].SelectSingleNode("LastName");
                         if (tmpNode != null)
                         {
-                            tmp += tmpNode.InnerText + " ";
+                            tmp += tmpNode.InnerText;
                         }
 
                         // Get fore name
                         tmpNode = tmpNodeList[j].SelectSingleNode("ForeName");
                         if (tmpNode != null)
                         {
-                            tmp += tmpNode.InnerText + " ";
+                            if(tmp != "")
+                            {
+                                tmp += " ";
+                            }
+                            tmp += tmpNode.InnerText + ". ";
                         }
-
+                        
                         // Get affiliation information
                         XmlNodeList infoNodeList = tmpNodeList[j].SelectNodes("AffiliationInfo");
                         if (infoNodeList != null)
@@ -88,7 +92,7 @@ namespace QueryVSM
                                 tmpNode = infoNodeList[k].SelectSingleNode("Affiliation");
                                 if (tmpNode != null)
                                 {
-                                    tmp += tmpNode.InnerText + " ";
+                                    tmp += tmpNode.InnerText + ". ";
                                 }
                             }
                         }
@@ -107,14 +111,18 @@ namespace QueryVSM
                         tmpNode = tmpNodeList[j].SelectSingleNode("LastName");
                         if (tmpNode != null)
                         {
-                            tmp += tmpNode.InnerText + " ";
+                            tmp += tmpNode.InnerText;
                         }
 
                         // Get fore name
                         tmpNode = tmpNodeList[j].SelectSingleNode("ForeName");
                         if (tmpNode != null)
                         {
-                            tmp += tmpNode.InnerText + " ";
+                            if (tmp != "")
+                            {
+                                tmp += " ";
+                            }
+                            tmp += tmpNode.InnerText + ". ";
                         }
 
                         // Get affiliation information
@@ -126,7 +134,7 @@ namespace QueryVSM
                                 tmpNode = infoNodeList[k].SelectSingleNode("Affiliation");
                                 if (tmpNode != null)
                                 {
-                                    tmp += tmpNode.InnerText + " ";
+                                    tmp += tmpNode.InnerText + ". ";
                                 }
                             }
                         }
@@ -176,16 +184,20 @@ namespace QueryVSM
                     {
                         // Get last name
                         tmpNode = tmpNodeList[j].SelectSingleNode("LastName");
-                        if(tmpNode != null)
+                        if (tmpNode != null)
                         {
-                            tmp += tmpNode.InnerText + " ";
+                            tmp += tmpNode.InnerText;
                         }
 
                         // Get fore name
                         tmpNode = tmpNodeList[j].SelectSingleNode("ForeName");
-                        if(tmpNode != null)
+                        if (tmpNode != null)
                         {
-                            tmp += tmpNode.InnerText + " ";
+                            if (tmp != "")
+                            {
+                                tmp += " ";
+                            }
+                            tmp += tmpNode.InnerText + ". ";
                         }
 
                         // Get affiliation information
@@ -197,7 +209,7 @@ namespace QueryVSM
                                 tmpNode = infoNodeList[k].SelectSingleNode("Affiliation");
                                 if(tmpNode != null)
                                 {
-                                    tmp += tmpNode.InnerText + " ";
+                                    tmp += tmpNode.InnerText + ". ";
                                 }
                             }
                         }

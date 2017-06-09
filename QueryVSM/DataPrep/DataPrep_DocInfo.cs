@@ -25,17 +25,17 @@ namespace QueryVSM
 
                 if (this.title != null)
                 {
-                    tmp += "Title: " + this.title + "\r\n";
+                    tmp += "Title:\r\n" + this.title + "\r\n\r\n";
                 }
 
                 if (this.authorInfo != null)
                 {
-                    tmp += "Author Info: " + this.title + "\r\n";
+                    tmp += "Author Info:\r\n" + this.authorInfo + "\r\n\r\n";
                 }
 
                 if (this.abstruct != null)
                 {
-                    tmp += "Abstruct: " + this.abstruct + "\r\n";
+                    tmp += "Abstruct:\r\n" + this.abstruct + "\r\n\r\n";
                 }
 
                 return tmp;
@@ -53,7 +53,7 @@ namespace QueryVSM
 
                 if (this.authorInfo != null)
                 {
-                    text += this.title;
+                    text += this.authorInfo;
                 }
 
                 if (this.abstruct != null)
