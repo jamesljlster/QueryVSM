@@ -155,6 +155,9 @@ namespace QueryVSM
             // Insert query term as a document
             this.add_doc(queryTerm);
 
+            // Update string tree
+            this.update_str_tree();
+
             // Get document weight vector
             double[][] docVector = this.get_doc_weight();
 
@@ -180,7 +183,7 @@ namespace QueryVSM
             // Return ranked document
             for (int i = 0; i < docIndex.Length; i++)
             {
-                rankedDoc[i] = this.docBakList[docIndex.Length - 1 - docIndex[i]];
+                rankedDoc[i] = this.docBakList[docIndex[docIndex.Length - 1 - i]];
             }
 
             return rankedDoc;
