@@ -65,13 +65,83 @@ namespace QueryVSM
             }
 
             // Append documentation
-            docList.Add(tmpDoc);
+            this.docList.Add(tmpDoc);
         }
 
-        // Function: Create binary string tree with all documemtation.
+        // Function: Create binary string tree entity with all documemtation.
         private void update_str_tree()
         {
-            
+            for(int i = 0; i < this.docList.Count; i++)
+            {
+                for(int j = 0; j < this.docList[i].Count; j++)
+                {
+                    this.wordEntity.insert_entity(this.docList[i][j]);
+                }
+            }
+        }
+
+        // Function: Erase binary string tree
+        private void erase_str_tree()
+        {
+            this.wordEntity = new BinaryStrTree();
+        }
+
+        // Function: Get word count list for each document
+        private int[][] get_count_list()
+        {
+            int[][] ret = new int[this.docList.Count][];
+
+            for (int i = 0; i < this.docList.Count; i++)
+            {
+                BinaryStrTree tmpTree = this.wordEntity.copy_entity();
+                for(int j = 0; j < this.docList[i].Count; j++)
+                {
+                    tmpTree.insert(this.docList[i][j]);
+                }
+                ret[i] = tmpTree.get_word_counter_list();
+            }
+
+            return ret;
+        }
+
+        // Function: Calculate document weight vector using tf-idf
+        private double[][] get_doc_weight()
+        {
+            // Memory allocation
+            double[][] docWeight = new double[this.docList.Count][];
+
+            // Get word count list
+            int[][] wordCountList = this.get_count_list();
+
+            // Calculate document weight vector
+            for(int i = 0; i < this.docList.Count; i++)
+            {
+                docWeight[i] = new double[wordCountList[i].Length];
+                for(int j = 0; j < docWeight[i].Length; j++)
+                {
+                    if(wordCountList[i][j] > 0)
+                    {
+                        // Get numbers of documents with the term.
+                        int docFreq = 0;    
+                        for(int k = 0; k < wordCountList.Length; k++)
+                        {
+                            if(wordCountList[k][j] > 0)
+                            {
+                                docFreq++;
+                            }
+                        }
+
+                        // Calculate weight
+                        docWeight[i][j] = (1 + Math.Log10(wordCountList[i][j])) * Math.Log10((double)this.docList.Count / (double)docFreq);
+                    }
+                    else
+                    {
+                        docWeight[i][j] = 0;
+                    }
+                }
+            }
+
+            return docWeight;
         }
     }
 }
