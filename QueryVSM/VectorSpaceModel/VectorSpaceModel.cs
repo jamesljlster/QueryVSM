@@ -159,10 +159,24 @@ namespace QueryVSM
             double[][] docVector = this.get_doc_weight();
 
             // Calculate similarity of each document with query term
-            double[] docCosine = new double[docVector.Length];
+            double[] docCosine = new double[docVector.Length - 1];
             for(int i = 0; i < docVector.Length - 1; i++)
             {
                 docCosine[i] = this.vector_cos(docVector[docVector.Length - 1], docVector[i]);
+            }
+
+            // Sort document with similarity
+            int[] docIndex = new int[docVector.Length - 1];
+            for(int i = 0; i < docVector.Length - 1; i++)
+            {
+                docIndex[i] = i;
+            }
+            Array.Sort(docCosine, docIndex);
+            
+            // Return ranked document
+            for(int i = 0; i < docIndex.Length; i++)
+            {
+                rankedDoc[i] = this.docBakList[docIndex.Length - 1 - docIndex[i]];
             }
 
             return rankedDoc;
