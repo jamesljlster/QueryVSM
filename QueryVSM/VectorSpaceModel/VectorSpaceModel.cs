@@ -147,10 +147,10 @@ namespace QueryVSM
             return docWeight;
         }
 
-        // Function: Get ranked document list
-        public String[] get_ranked_doc(String queryTerm)
+        // Function: Get ranked document index list
+        public int[] get_ranked_doc_index(String queryTerm)
         {
-            String[] rankedDoc = new String[this.docList.Count];
+            int[] rankedIndex = new int[this.docList.Count];
 
             // Insert query term as a document
             this.add_doc(queryTerm);
@@ -163,27 +163,39 @@ namespace QueryVSM
 
             // Calculate similarity of each document with query term
             double[] docCosine = new double[docVector.Length - 1];
-            for(int i = 0; i < docVector.Length - 1; i++)
+            for (int i = 0; i < docVector.Length - 1; i++)
             {
                 docCosine[i] = this.vector_cos(docVector[docVector.Length - 1], docVector[i]);
             }
 
-            // Sort document with similarity
+            // Sort document index with similarity
             int[] docIndex = new int[docVector.Length - 1];
-            for(int i = 0; i < docVector.Length - 1; i++)
+            for (int i = 0; i < docVector.Length - 1; i++)
             {
                 docIndex[i] = i;
             }
             Array.Sort(docCosine, docIndex);
+            Array.Reverse(docIndex);
 
             // Remove query term
             this.docBakList.RemoveAt(this.docBakList.Count - 1);
             this.docList.RemoveAt(this.docBakList.Count - 1);
+            
+            return docIndex;
+        }
+
+        // Function: Get ranked document list
+        public String[] get_ranked_doc(String queryTerm)
+        {
+            String[] rankedDoc = new String[this.docList.Count];
+
+            // Get ranked document index list
+            int[] docIndex = this.get_ranked_doc_index(queryTerm);
 
             // Return ranked document
             for (int i = 0; i < docIndex.Length; i++)
             {
-                rankedDoc[i] = this.docBakList[docIndex[docIndex.Length - 1 - i]];
+                rankedDoc[i] = this.docBakList[docIndex[i]];
             }
 
             return rankedDoc;

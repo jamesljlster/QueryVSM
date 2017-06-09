@@ -22,7 +22,7 @@ namespace QueryVSM
             vsm.add_doc("Initial exploration of text retrieval systems for “small” corpora of scientific abstracts, and law and business documents.IR systems have filters to handle most popular documents.");
             vsm.add_doc("Strings of the same length, distance between them is the number of positions with different characters.The definition of a ranking function that allows quantifying the similarities among documents and queries.");
 
-            String[] rankedDoc = vsm.get_ranked_doc("user");
+            String[] rankedDoc = vsm.get_ranked_doc("documents queries users");
 
             for(int i = 0; i < rankedDoc.Length; i++)
             {
