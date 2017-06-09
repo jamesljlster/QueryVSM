@@ -15,7 +15,13 @@ namespace QueryVSM
         public Form1()
         {
             InitializeComponent();
-            debugMsg.Text = DataPrep.request_docs_xml("AIDS", 100, 60);
+            
+            List<DataPrep.DocInfo> docList = DataPrep.parse_xml_docs(DataPrep.request_xml_docs("AIDS", 100, 60));
+            for(int i = 0; i < docList.Count; i++)
+            {
+                debugMsg.Text += docList[i].ToString();
+                debugMsg.Text += "\r\n";
+            }
         }
     }
 }

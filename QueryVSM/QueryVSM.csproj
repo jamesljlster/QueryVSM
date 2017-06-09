@@ -76,6 +76,7 @@
     <Compile Include="BinaryStrTree\BinaryStrTree_Get.cs" />
     <Compile Include="BinaryStrTree\BinaryStrTree_Insert.cs" />
     <Compile Include="DataPrep\DataPrep.cs" />
+    <Compile Include="DataPrep\DataPrep_DocInfo.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

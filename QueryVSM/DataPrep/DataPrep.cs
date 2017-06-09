@@ -9,57 +9,96 @@ using System.Net;
 
 namespace QueryVSM
 {
-    class DocInfo
-    {
-        // Constructor
-        public DocInfo()
-        {
-            this.title = null;
-            this.abstruct = null;
-            this.authorInfo = null;
-        }
-
-        public override string ToString()
-        {
-            String tmp = "";
-
-            if(this.title != null)
-            {
-                tmp += "Title: " + this.title + "\r\n";
-            }
-            
-            if(this.authorInfo != null)
-            {
-                tmp += "Author Info: " + this.title + "\r\n";
-            }
-
-            if(this.abstruct != null)
-            {
-                tmp += "Abstruct: " + this.abstruct + "\r\n";
-            }
-
-            return tmp;
-        }
-
-        public String title;
-        public String abstruct;
-        public String authorInfo;
-    }
-
-    class DataPrep
+    partial class DataPrep
     {
         // Function: Parse xml documents to document list
         public static List<DocInfo> parse_xml_docs(String xmlDoc)
         {
+            List<DocInfo> docList = new List<DocInfo>();
+
             // Create xml
             XmlDocument xml = new XmlDocument();
             xml.LoadXml(xmlDoc);
 
-            // Parsing xml
-            XmlNodeList bookArticle = xml.SelectNodes("PubmedBookArticle");
-            XmlNodeList journalArticl = xml.SelectNodes("PubmedArticle");
+            // Select articles
+            XmlNodeList bookArticle = xml.SelectNodes("PubmedArticleSet/PubmedBookArticle");
+            XmlNodeList journalArticl = xml.SelectNodes("PubmedArticleSet/PubmedArticle");
 
-            return null;
+            // Parsing articles
+            parse_journal_xml(ref docList, journalArticl);
+
+            return docList;
+        }
+
+        // Function: Parse book article
+        private static void parse_journal_xml(ref List<DocInfo> docList, XmlNodeList xmlList)
+        {
+            for(int i = 0; i < xmlList.Count; i++)
+            {
+                XmlNode tmpNode;
+                XmlNodeList tmpNodeList;
+                DocInfo docInfo = new DocInfo();
+
+                // Get article title
+                tmpNode = xmlList[i].SelectSingleNode("MedlineCitation/Article/ArticleTitle");
+                if(tmpNode != null)
+                {
+                    docInfo.title = tmpNode.InnerText;
+                }
+
+                // Get abstruct
+                tmpNodeList = xmlList[i].SelectNodes("MedlineCitation/Article/Abstract/AbstractText");
+                if(tmpNodeList != null)
+                {
+                    String tmp = "";
+                    for(int j = 0; j < tmpNodeList.Count; j++)
+                    {
+                        tmp += tmpNodeList[j].InnerText + "\r\n";
+                    }
+                    docInfo.abstruct = tmp;
+                }
+
+                // Get author info
+                tmpNodeList = xmlList[i].SelectNodes("MedlineCitation/Article/AuthorList/Author");
+                if(tmpNodeList != null)
+                {
+                    String tmp = "";
+                    for(int j = 0; j < tmpNodeList.Count; j++)
+                    {
+                        // Get last name
+                        tmpNode = tmpNodeList[j].SelectSingleNode("LastName");
+                        if(tmpNode != null)
+                        {
+                            tmp += tmpNode.InnerText + " ";
+                        }
+
+                        // Get fore name
+                        tmpNode = tmpNodeList[j].SelectSingleNode("ForeName");
+                        if(tmpNode != null)
+                        {
+                            tmp += tmpNode.InnerText + " ";
+                        }
+
+                        // Get affiliation information
+                        XmlNodeList infoNodeList = tmpNodeList[j].SelectNodes("AffiliationInfo");
+                        if(infoNodeList != null)
+                        {
+                            for (int k = 0; k < infoNodeList.Count; k++)
+                            {
+                                tmpNode = infoNodeList[k].SelectSingleNode("Affiliation");
+                                if(tmpNode != null)
+                                {
+                                    tmp += tmpNode.InnerText + " ";
+                                }
+                            }
+                        }
+                    }
+
+                    docInfo.authorInfo += tmp + "\r\n";
+                }
+
+                docList.Add(docInfo);
+            }
         }
 
         // Function: Get documents associated with query term
