@@ -14,10 +14,12 @@ namespace QueryVSM
         {
             this.stopWords = new List<String>();
             this.docList = new List< List<String> >();
+            this.docBakList = new List<String>();
             this.wordEntity = new BinaryStrTree();
         }
 
         private List<String> stopWords;
+        private List<String> docBakList;
         private List< List<String> > docList;
         private BinaryStrTree wordEntity;
 
@@ -65,6 +67,7 @@ namespace QueryVSM
             }
 
             // Append documentation
+            this.docBakList.Add(doc);
             this.docList.Add(tmpDoc);
         }
 
