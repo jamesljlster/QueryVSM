@@ -15,22 +15,131 @@ namespace QueryVSM
         public static List<DocInfo> parse_xml_docs(String xmlDoc)
         {
             List<DocInfo> docList = new List<DocInfo>();
+            XmlNodeList tmpXmlList;
 
             // Create xml
             XmlDocument xml = new XmlDocument();
             xml.LoadXml(xmlDoc);
 
-            // Select articles
-            XmlNodeList bookArticle = xml.SelectNodes("PubmedArticleSet/PubmedBookArticle");
-            XmlNodeList journalArticl = xml.SelectNodes("PubmedArticleSet/PubmedArticle");
-
             // Parsing articles
-            parse_journal_xml(ref docList, journalArticl);
+            tmpXmlList = xml.SelectNodes("PubmedArticleSet/PubmedBookArticle");
+            parse_book_xml(ref docList, tmpXmlList);
+            tmpXmlList = xml.SelectNodes("PubmedArticleSet/PubmedArticle");
+            parse_journal_xml(ref docList, tmpXmlList);
 
             return docList;
         }
 
         // Function: Parse book article
+        private static void parse_book_xml(ref List<DocInfo> docList, XmlNodeList xmlList)
+        {
+            for (int i = 0; i < xmlList.Count; i++)
+            {
+                XmlNode tmpNode;
+                XmlNodeList tmpNodeList;
+                DocInfo docInfo = new DocInfo();
+
+                // Get article title
+                tmpNode = xmlList[i].SelectSingleNode("BookDocument/ArticleTitle");
+                if (tmpNode != null)
+                {
+                    docInfo.title = tmpNode.InnerText;
+                }
+
+                // Get abstruct
+                tmpNodeList = xmlList[i].SelectNodes("BookDocument/Abstract/AbstractText");
+                if (tmpNodeList != null)
+                {
+                    String tmp = "";
+                    for (int j = 0; j < tmpNodeList.Count; j++)
+                    {
+                        tmp += tmpNodeList[j].InnerText + "\r\n";
+                    }
+                    docInfo.abstruct = tmp;
+                }
+
+                // Get author info
+                tmpNodeList = xmlList[i].SelectNodes("BookDocument/Book/AuthorList/Author");
+                if (tmpNodeList != null)
+                {
+                    String tmp = "";
+                    for (int j = 0; j < tmpNodeList.Count; j++)
+                    {
+                        // Get last name
+                        tmpNode = tmpNodeList[j].SelectSingleNode("LastName");
+                        if (tmpNode != null)
+                        {
+                            tmp += tmpNode.InnerText + " ";
+                        }
+
+                        // Get fore name
+                        tmpNode = tmpNodeList[j].SelectSingleNode("ForeName");
+                        if (tmpNode != null)
+                        {
+                            tmp += tmpNode.InnerText + " ";
+                        }
+
+                        // Get affiliation information
+                        XmlNodeList infoNodeList = tmpNodeList[j].SelectNodes("AffiliationInfo");
+                        if (infoNodeList != null)
+                        {
+                            for (int k = 0; k < infoNodeList.Count; k++)
+                            {
+                                tmpNode = infoNodeList[k].SelectSingleNode("Affiliation");
+                                if (tmpNode != null)
+                                {
+                                    tmp += tmpNode.InnerText + " ";
+                                }
+                            }
+                        }
+                    }
+
+                    docInfo.authorInfo += tmp + "\r\n";
+                }
+
+                tmpNodeList = xmlList[i].SelectNodes("BookDocument/AuthorList/Author");
+                if (tmpNodeList != null)
+                {
+                    String tmp = "";
+                    for (int j = 0; j < tmpNodeList.Count; j++)
+                    {
+                        // Get last name
+                        tmpNode = tmpNodeList[j].SelectSingleNode("LastName");
+                        if (tmpNode != null)
+                        {
+                            tmp += tmpNode.InnerText + " ";
+                        }
+
+                        // Get fore name
+                        tmpNode = tmpNodeList[j].SelectSingleNode("ForeName");
+                        if (tmpNode != null)
+                        {
+                            tmp += tmpNode.InnerText + " ";
+                        }
+
+                        // Get affiliation information
+                        XmlNodeList infoNodeList = tmpNodeList[j].SelectNodes("AffiliationInfo");
+                        if (infoNodeList != null)
+                        {
+                            for (int k = 0; k < infoNodeList.Count; k++)
+                            {
+                                tmpNode = infoNodeList[k].SelectSingleNode("Affiliation");
+                                if (tmpNode != null)
+                                {
+                                    tmp += tmpNode.InnerText + " ";
+                                }
+                            }
+                        }
+                    }
+
+                    docInfo.authorInfo += tmp + "\r\n";
+                }
+
+                docList.Add(docInfo);
+            }
+        }
+
+        // Function: Parse journal article
         private static void parse_journal_xml(ref List<DocInfo> docList, XmlNodeList xmlList)
         {
             for(int i = 0; i < xmlList.Count; i++)
