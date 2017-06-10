@@ -22,25 +22,7 @@ namespace QueryVSM
         private List<String> docBakList;
         private List< List<String> > docList;
         private BinaryStrTree wordEntity;
-
-        // Function: Load stop words from string, separate with new line or space
-        public void load_stop_words(String stopWords, char[] sepCh)
-        {
-            // Parsing
-            String[] wordList = stopWords.Split(sepCh);
-            for(int i = 0; i < wordList.Length; i++)
-            {
-                String tmp = wordList[i].ToLower().Trim();
-                if(tmp != null)
-                {
-                    if(!this.stopWords.Contains(tmp))
-                    {
-                        this.stopWords.Add(tmp);
-                    }
-                }
-            }
-        }
-
+        
         // Function: Add a documemtation
         public void add_doc(String doc)
         {
