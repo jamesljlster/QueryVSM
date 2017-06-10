@@ -51,6 +51,11 @@ namespace QueryVSM
             // Change text to lower case
             String lCaseString = richTextBox.Text.ToLower();
 
+            // Backup
+            int selIndex = richTextBox.SelectionStart;
+            Color fColorBak = richTextBox.SelectionColor;
+            Color bColorBak = richTextBox.SelectionBackColor;
+
             // Searching
             int procIndex = 0;
             int tmpIndex;
@@ -62,6 +67,11 @@ namespace QueryVSM
 
                 procIndex += word.Length;
             }
+
+            // Restore
+            richTextBox.SelectionStart = selIndex;
+            richTextBox.SelectionColor = fColorBak;
+            richTextBox.SelectionBackColor = bColorBak;
         }
     }
 }
