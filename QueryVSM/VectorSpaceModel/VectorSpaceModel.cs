@@ -22,6 +22,14 @@ namespace QueryVSM
         private List<String> docBakList;
         private List< List<String> > docList;
         private BinaryStrTree wordEntity;
+
+        // Function: Restart vector space model
+        public void restart()
+        {
+            this.docList = new List<List<String>>();
+            this.docBakList = new List<String>();
+            this.wordEntity = new BinaryStrTree();
+        }
         
         // Function: Add a documemtation
         public void add_doc(String doc)
@@ -157,7 +165,7 @@ namespace QueryVSM
 
             // Remove query term
             this.docBakList.RemoveAt(this.docBakList.Count - 1);
-            this.docList.RemoveAt(this.docBakList.Count - 1);
+            this.docList.RemoveAt(this.docList.Count - 1);
             
             return docIndex;
         }
