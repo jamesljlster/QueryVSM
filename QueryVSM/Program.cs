@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Drawing;
 
 namespace QueryVSM
 {
@@ -33,5 +34,34 @@ namespace QueryVSM
         }
 
         public static VectorSpaceModel vsm = new VectorSpaceModel();
+
+        // Function: Highlight words in rich text box.
+        public static void highlight(this RichTextBox richTextBox, String word, Color foreColor, Color backColor)
+        {
+            // Checking
+            if(word.Length <= 0)
+            {
+                return;
+            }
+            else
+            {
+                word = word.ToLower();
+            }
+
+            // Change text to lower case
+            String lCaseString = richTextBox.Text.ToLower();
+
+            // Searching
+            int procIndex = 0;
+            int tmpIndex;
+            while((tmpIndex = lCaseString.IndexOf(word, procIndex)) >= 0)
+            {
+                richTextBox.Select(tmpIndex, word.Length);
+                richTextBox.SelectionBackColor = backColor;
+                richTextBox.SelectionColor = foreColor;
+
+                procIndex += word.Length;
+            }
+        }
     }
 }

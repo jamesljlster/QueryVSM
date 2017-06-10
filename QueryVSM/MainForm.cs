@@ -17,6 +17,7 @@ namespace QueryVSM
         bool abstractFilter = false;
 
         List<DataPrep.DocInfo> docList;
+        String[] highlightWords = null;
 
         public MainForm()
         {
@@ -79,6 +80,7 @@ namespace QueryVSM
             // Process query terms
             String queryTermsBak = queryTerms_Msg.Text;
             String[] queryTermList = queryTermsBak.ToLower().Split(' ');
+            this.highlightWords = queryTermList;
             String queryTerms = "";
             for(int i = 0; i < queryTermList.Length; i++)
             {
@@ -188,6 +190,17 @@ namespace QueryVSM
             if (docList[docListBox.SelectedIndex].abstractText != null)
             {
                 abstract_Msg.Text = docList[docListBox.SelectedIndex].abstractText;
+            }
+
+            // Highlighting
+            if(this.highlightWords != null)
+            {
+                for(int i = 0; i < this.highlightWords.Length; i++)
+                {
+                    title_Msg.highlight(this.highlightWords[i], Color.Red, Color.Yellow);
+                    author_Msg.highlight(this.highlightWords[i], Color.Red, Color.Yellow);
+                    abstract_Msg.highlight(this.highlightWords[i], Color.Red, Color.Yellow);
+                }
             }
         }
     }
