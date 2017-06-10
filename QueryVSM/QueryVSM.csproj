@@ -121,6 +121,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DefaultStopWords.txt" />
+    <Content Include="StopWords.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

@@ -30,48 +30,62 @@
         {
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stopWordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.tabControl2 = new System.Windows.Forms.TabControl();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.debugMsg = new System.Windows.Forms.TextBox();
+            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.queryTerms_Msg = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.relDate_Num = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.retMax_Num = new System.Windows.Forms.NumericUpDown();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.abstractFilter_Button = new System.Windows.Forms.Button();
+            this.authorFilter_Button = new System.Windows.Forms.Button();
+            this.titleFilter_Button = new System.Windows.Forms.Button();
+            this.splitContainer6 = new System.Windows.Forms.SplitContainer();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.start_Button = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.titleFilter_Button = new System.Windows.Forms.Button();
-            this.authorFilter_Button = new System.Windows.Forms.Button();
-            this.abstractFilter_Button = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.retMax_Num = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.relDate_Num = new System.Windows.Forms.NumericUpDown();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.queryTerms_Msg = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.splitContainer5 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer6 = new System.Windows.Forms.SplitContainer();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.title_Msg = new System.Windows.Forms.TextBox();
-            this.author_Msg = new System.Windows.Forms.TextBox();
-            this.abstract_Msg = new System.Windows.Forms.TextBox();
+            this.debugMsg = new System.Windows.Forms.TextBox();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.docListBox = new System.Windows.Forms.CheckedListBox();
-            this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stopWordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.title_Msg = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.author_Msg = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.abstract_Msg = new System.Windows.Forms.TextBox();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
+            this.splitContainer5.Panel1.SuspendLayout();
+            this.splitContainer5.Panel2.SuspendLayout();
+            this.splitContainer5.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.relDate_Num)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.retMax_Num)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
+            this.splitContainer6.Panel1.SuspendLayout();
+            this.splitContainer6.Panel2.SuspendLayout();
+            this.splitContainer6.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -86,20 +100,6 @@
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.retMax_Num)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.relDate_Num)).BeginInit();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
-            this.splitContainer5.Panel1.SuspendLayout();
-            this.splitContainer5.Panel2.SuspendLayout();
-            this.splitContainer5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).BeginInit();
-            this.splitContainer6.Panel1.SuspendLayout();
-            this.splitContainer6.Panel2.SuspendLayout();
-            this.splitContainer6.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -126,6 +126,26 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // closeToolStripMenuItem
+            // 
+            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.closeToolStripMenuItem.Text = "Close";
+            // 
+            // settingToolStripMenuItem
+            // 
+            this.settingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stopWordsToolStripMenuItem});
+            this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
+            this.settingToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.settingToolStripMenuItem.Text = "Setting";
+            // 
+            // stopWordsToolStripMenuItem
+            // 
+            this.stopWordsToolStripMenuItem.Name = "stopWordsToolStripMenuItem";
+            this.stopWordsToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.stopWordsToolStripMenuItem.Text = "Stop Words";
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -133,6 +153,12 @@
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
+            this.aboutToolStripMenuItem.Text = "About";
             // 
             // splitContainer4
             // 
@@ -155,6 +181,238 @@
             this.splitContainer4.SplitterDistance = 205;
             this.splitContainer4.TabIndex = 17;
             this.splitContainer4.TabStop = false;
+            // 
+            // splitContainer5
+            // 
+            this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer5.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer5.IsSplitterFixed = true;
+            this.splitContainer5.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer5.Name = "splitContainer5";
+            this.splitContainer5.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer5.Panel1
+            // 
+            this.splitContainer5.Panel1.Controls.Add(this.tabControl1);
+            this.splitContainer5.Panel1.Padding = new System.Windows.Forms.Padding(5);
+            // 
+            // splitContainer5.Panel2
+            // 
+            this.splitContainer5.Panel2.Controls.Add(this.splitContainer6);
+            this.splitContainer5.Size = new System.Drawing.Size(205, 417);
+            this.splitContainer5.SplitterDistance = 125;
+            this.splitContainer5.TabIndex = 0;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(5, 5);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(195, 115);
+            this.tabControl1.TabIndex = 15;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.queryTerms_Msg);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(187, 89);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Terms";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(154, 12);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Query terms separated by space:";
+            // 
+            // queryTerms_Msg
+            // 
+            this.queryTerms_Msg.Location = new System.Drawing.Point(6, 18);
+            this.queryTerms_Msg.Name = "queryTerms_Msg";
+            this.queryTerms_Msg.Size = new System.Drawing.Size(175, 22);
+            this.queryTerms_Msg.TabIndex = 1;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.relDate_Num);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.retMax_Num);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(187, 89);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Setting";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // relDate_Num
+            // 
+            this.relDate_Num.Location = new System.Drawing.Point(76, 35);
+            this.relDate_Num.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.relDate_Num.Name = "relDate_Num";
+            this.relDate_Num.Size = new System.Drawing.Size(105, 22);
+            this.relDate_Num.TabIndex = 14;
+            this.relDate_Num.Value = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 8);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 12);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Return Max:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 37);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 12);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "RelDate:";
+            // 
+            // retMax_Num
+            // 
+            this.retMax_Num.Location = new System.Drawing.Point(76, 6);
+            this.retMax_Num.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.retMax_Num.Name = "retMax_Num";
+            this.retMax_Num.Size = new System.Drawing.Size(105, 22);
+            this.retMax_Num.TabIndex = 13;
+            this.retMax_Num.Value = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.abstractFilter_Button);
+            this.tabPage3.Controls.Add(this.authorFilter_Button);
+            this.tabPage3.Controls.Add(this.titleFilter_Button);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(187, 89);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Filter";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // abstractFilter_Button
+            // 
+            this.abstractFilter_Button.Location = new System.Drawing.Point(6, 64);
+            this.abstractFilter_Button.Name = "abstractFilter_Button";
+            this.abstractFilter_Button.Size = new System.Drawing.Size(175, 23);
+            this.abstractFilter_Button.TabIndex = 5;
+            this.abstractFilter_Button.Text = "Abstract";
+            this.abstractFilter_Button.UseVisualStyleBackColor = true;
+            this.abstractFilter_Button.Click += new System.EventHandler(this.abstractFilter_Button_Click);
+            // 
+            // authorFilter_Button
+            // 
+            this.authorFilter_Button.Location = new System.Drawing.Point(6, 35);
+            this.authorFilter_Button.Name = "authorFilter_Button";
+            this.authorFilter_Button.Size = new System.Drawing.Size(175, 23);
+            this.authorFilter_Button.TabIndex = 4;
+            this.authorFilter_Button.Text = "Author Info";
+            this.authorFilter_Button.UseVisualStyleBackColor = true;
+            this.authorFilter_Button.Click += new System.EventHandler(this.authorFilter_Button_Click);
+            // 
+            // titleFilter_Button
+            // 
+            this.titleFilter_Button.Location = new System.Drawing.Point(6, 6);
+            this.titleFilter_Button.Name = "titleFilter_Button";
+            this.titleFilter_Button.Size = new System.Drawing.Size(175, 23);
+            this.titleFilter_Button.TabIndex = 3;
+            this.titleFilter_Button.Text = "Title";
+            this.titleFilter_Button.UseVisualStyleBackColor = true;
+            this.titleFilter_Button.Click += new System.EventHandler(this.titleFilter_Button_Click);
+            // 
+            // splitContainer6
+            // 
+            this.splitContainer6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer6.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer6.IsSplitterFixed = true;
+            this.splitContainer6.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer6.Name = "splitContainer6";
+            this.splitContainer6.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer6.Panel1
+            // 
+            this.splitContainer6.Panel1.Controls.Add(this.progressBar1);
+            this.splitContainer6.Panel1.Controls.Add(this.label1);
+            this.splitContainer6.Panel1.Controls.Add(this.start_Button);
+            // 
+            // splitContainer6.Panel2
+            // 
+            this.splitContainer6.Panel2.Controls.Add(this.debugMsg);
+            this.splitContainer6.Panel2.Padding = new System.Windows.Forms.Padding(5);
+            this.splitContainer6.Size = new System.Drawing.Size(205, 288);
+            this.splitContainer6.SplitterDistance = 72;
+            this.splitContainer6.TabIndex = 0;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(5, 44);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(195, 23);
+            this.progressBar1.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(32, 12);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Status";
+            // 
+            // start_Button
+            // 
+            this.start_Button.Location = new System.Drawing.Point(5, 3);
+            this.start_Button.Name = "start_Button";
+            this.start_Button.Size = new System.Drawing.Size(195, 23);
+            this.start_Button.TabIndex = 13;
+            this.start_Button.Text = "Start Query";
+            this.start_Button.UseVisualStyleBackColor = true;
+            this.start_Button.Click += new System.EventHandler(this.start_Button_Click);
+            // 
+            // debugMsg
+            // 
+            this.debugMsg.BackColor = System.Drawing.Color.White;
+            this.debugMsg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.debugMsg.Location = new System.Drawing.Point(5, 5);
+            this.debugMsg.Multiline = true;
+            this.debugMsg.Name = "debugMsg";
+            this.debugMsg.ReadOnly = true;
+            this.debugMsg.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.debugMsg.Size = new System.Drawing.Size(195, 202);
+            this.debugMsg.TabIndex = 0;
             // 
             // tabControl2
             // 
@@ -194,6 +452,18 @@
             this.splitContainer1.Size = new System.Drawing.Size(396, 375);
             this.splitContainer1.SplitterDistance = 150;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // docListBox
+            // 
+            this.docListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.docListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.docListBox.FormattingEnabled = true;
+            this.docListBox.HorizontalScrollbar = true;
+            this.docListBox.Location = new System.Drawing.Point(0, 0);
+            this.docListBox.Name = "docListBox";
+            this.docListBox.Size = new System.Drawing.Size(148, 373);
+            this.docListBox.TabIndex = 0;
+            this.docListBox.SelectedIndexChanged += new System.EventHandler(this.docListBox_SelectedIndexChanged);
             // 
             // splitContainer2
             // 
@@ -238,237 +508,6 @@
             this.splitContainer3.SplitterDistance = 68;
             this.splitContainer3.TabIndex = 0;
             // 
-            // debugMsg
-            // 
-            this.debugMsg.BackColor = System.Drawing.Color.White;
-            this.debugMsg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.debugMsg.Location = new System.Drawing.Point(5, 5);
-            this.debugMsg.Multiline = true;
-            this.debugMsg.Name = "debugMsg";
-            this.debugMsg.ReadOnly = true;
-            this.debugMsg.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.debugMsg.Size = new System.Drawing.Size(195, 202);
-            this.debugMsg.TabIndex = 0;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(5, 44);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(195, 23);
-            this.progressBar1.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 12);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Status";
-            // 
-            // start_Button
-            // 
-            this.start_Button.Location = new System.Drawing.Point(5, 3);
-            this.start_Button.Name = "start_Button";
-            this.start_Button.Size = new System.Drawing.Size(195, 23);
-            this.start_Button.TabIndex = 13;
-            this.start_Button.Text = "Start Query";
-            this.start_Button.UseVisualStyleBackColor = true;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(5, 5);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(195, 115);
-            this.tabControl1.TabIndex = 15;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.abstractFilter_Button);
-            this.tabPage3.Controls.Add(this.authorFilter_Button);
-            this.tabPage3.Controls.Add(this.titleFilter_Button);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(187, 89);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Filter";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // titleFilter_Button
-            // 
-            this.titleFilter_Button.Location = new System.Drawing.Point(6, 6);
-            this.titleFilter_Button.Name = "titleFilter_Button";
-            this.titleFilter_Button.Size = new System.Drawing.Size(175, 23);
-            this.titleFilter_Button.TabIndex = 3;
-            this.titleFilter_Button.Text = "Title";
-            this.titleFilter_Button.UseVisualStyleBackColor = true;
-            this.titleFilter_Button.Click += new System.EventHandler(this.titleFilter_Button_Click);
-            // 
-            // authorFilter_Button
-            // 
-            this.authorFilter_Button.Location = new System.Drawing.Point(6, 35);
-            this.authorFilter_Button.Name = "authorFilter_Button";
-            this.authorFilter_Button.Size = new System.Drawing.Size(175, 23);
-            this.authorFilter_Button.TabIndex = 4;
-            this.authorFilter_Button.Text = "Author Info";
-            this.authorFilter_Button.UseVisualStyleBackColor = true;
-            this.authorFilter_Button.Click += new System.EventHandler(this.authorFilter_Button_Click);
-            // 
-            // abstractFilter_Button
-            // 
-            this.abstractFilter_Button.Location = new System.Drawing.Point(6, 64);
-            this.abstractFilter_Button.Name = "abstractFilter_Button";
-            this.abstractFilter_Button.Size = new System.Drawing.Size(175, 23);
-            this.abstractFilter_Button.TabIndex = 5;
-            this.abstractFilter_Button.Text = "Abstract";
-            this.abstractFilter_Button.UseVisualStyleBackColor = true;
-            this.abstractFilter_Button.Click += new System.EventHandler(this.abstractFilter_Button_Click);
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.relDate_Num);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.retMax_Num);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(187, 84);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Setting";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // retMax_Num
-            // 
-            this.retMax_Num.Location = new System.Drawing.Point(76, 6);
-            this.retMax_Num.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.retMax_Num.Name = "retMax_Num";
-            this.retMax_Num.Size = new System.Drawing.Size(105, 22);
-            this.retMax_Num.TabIndex = 13;
-            this.retMax_Num.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 37);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 12);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "RelDate:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 8);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 12);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Return Max:";
-            // 
-            // relDate_Num
-            // 
-            this.relDate_Num.Location = new System.Drawing.Point(76, 35);
-            this.relDate_Num.Maximum = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.relDate_Num.Name = "relDate_Num";
-            this.relDate_Num.Size = new System.Drawing.Size(105, 22);
-            this.relDate_Num.TabIndex = 14;
-            this.relDate_Num.Value = new decimal(new int[] {
-            60,
-            0,
-            0,
-            0});
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.queryTerms_Msg);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(187, 84);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Terms";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // queryTerms_Msg
-            // 
-            this.queryTerms_Msg.Location = new System.Drawing.Point(6, 18);
-            this.queryTerms_Msg.Name = "queryTerms_Msg";
-            this.queryTerms_Msg.Size = new System.Drawing.Size(175, 22);
-            this.queryTerms_Msg.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 12);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Query terms separated by space:";
-            // 
-            // splitContainer5
-            // 
-            this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer5.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer5.IsSplitterFixed = true;
-            this.splitContainer5.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer5.Name = "splitContainer5";
-            this.splitContainer5.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer5.Panel1
-            // 
-            this.splitContainer5.Panel1.Controls.Add(this.tabControl1);
-            this.splitContainer5.Panel1.Padding = new System.Windows.Forms.Padding(5);
-            // 
-            // splitContainer5.Panel2
-            // 
-            this.splitContainer5.Panel2.Controls.Add(this.splitContainer6);
-            this.splitContainer5.Size = new System.Drawing.Size(205, 417);
-            this.splitContainer5.SplitterDistance = 125;
-            this.splitContainer5.TabIndex = 0;
-            // 
-            // splitContainer6
-            // 
-            this.splitContainer6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer6.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer6.IsSplitterFixed = true;
-            this.splitContainer6.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer6.Name = "splitContainer6";
-            this.splitContainer6.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer6.Panel1
-            // 
-            this.splitContainer6.Panel1.Controls.Add(this.progressBar1);
-            this.splitContainer6.Panel1.Controls.Add(this.label1);
-            this.splitContainer6.Panel1.Controls.Add(this.start_Button);
-            // 
-            // splitContainer6.Panel2
-            // 
-            this.splitContainer6.Panel2.Controls.Add(this.debugMsg);
-            this.splitContainer6.Panel2.Padding = new System.Windows.Forms.Padding(5);
-            this.splitContainer6.Size = new System.Drawing.Size(205, 288);
-            this.splitContainer6.SplitterDistance = 72;
-            this.splitContainer6.TabIndex = 0;
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.title_Msg);
@@ -479,28 +518,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Title";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.author_Msg);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(3, 3);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(234, 71);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Author Information";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.abstract_Msg);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.Location = new System.Drawing.Point(3, 3);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(234, 212);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Abstract";
             // 
             // title_Msg
             // 
@@ -514,6 +531,17 @@
             this.title_Msg.TabIndex = 0;
             this.title_Msg.WordWrap = false;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.author_Msg);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(3, 3);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(234, 71);
+            this.groupBox2.TabIndex = 0;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Author Information";
+            // 
             // author_Msg
             // 
             this.author_Msg.BackColor = System.Drawing.Color.White;
@@ -525,6 +553,17 @@
             this.author_Msg.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.author_Msg.Size = new System.Drawing.Size(228, 50);
             this.author_Msg.TabIndex = 1;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.abstract_Msg);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox3.Location = new System.Drawing.Point(3, 3);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(234, 212);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Abstract";
             // 
             // abstract_Msg
             // 
@@ -538,44 +577,7 @@
             this.abstract_Msg.Size = new System.Drawing.Size(228, 191);
             this.abstract_Msg.TabIndex = 2;
             // 
-            // docListBox
-            // 
-            this.docListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.docListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.docListBox.FormattingEnabled = true;
-            this.docListBox.HorizontalScrollbar = true;
-            this.docListBox.Location = new System.Drawing.Point(0, 0);
-            this.docListBox.Name = "docListBox";
-            this.docListBox.Size = new System.Drawing.Size(148, 373);
-            this.docListBox.TabIndex = 0;
-            // 
-            // settingToolStripMenuItem
-            // 
-            this.settingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.stopWordsToolStripMenuItem});
-            this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
-            this.settingToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.settingToolStripMenuItem.Text = "Setting";
-            // 
-            // stopWordsToolStripMenuItem
-            // 
-            this.stopWordsToolStripMenuItem.Name = "stopWordsToolStripMenuItem";
-            this.stopWordsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.stopWordsToolStripMenuItem.Text = "Stop Words";
-            // 
-            // closeToolStripMenuItem
-            // 
-            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.closeToolStripMenuItem.Text = "Close";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.aboutToolStripMenuItem.Text = "About";
-            // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -584,7 +586,7 @@
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
             this.MinimumSize = new System.Drawing.Size(640, 480);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "QueryVSM";
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
@@ -592,6 +594,24 @@
             this.splitContainer4.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
+            this.splitContainer5.Panel1.ResumeLayout(false);
+            this.splitContainer5.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
+            this.splitContainer5.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.relDate_Num)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.retMax_Num)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.splitContainer6.Panel1.ResumeLayout(false);
+            this.splitContainer6.Panel1.PerformLayout();
+            this.splitContainer6.Panel2.ResumeLayout(false);
+            this.splitContainer6.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
+            this.splitContainer6.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -606,24 +626,6 @@
             this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.retMax_Num)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.relDate_Num)).EndInit();
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.splitContainer5.Panel1.ResumeLayout(false);
-            this.splitContainer5.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
-            this.splitContainer5.ResumeLayout(false);
-            this.splitContainer6.Panel1.ResumeLayout(false);
-            this.splitContainer6.Panel1.PerformLayout();
-            this.splitContainer6.Panel2.ResumeLayout(false);
-            this.splitContainer6.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer6)).EndInit();
-            this.splitContainer6.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
