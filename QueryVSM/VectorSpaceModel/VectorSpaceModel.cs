@@ -23,15 +23,11 @@ namespace QueryVSM
         private List< List<String> > docList;
         private BinaryStrTree wordEntity;
 
-        // Function: Load stop words from file, separate with new line or space
-        public void load_stop_words(String filePath)
+        // Function: Load stop words from string, separate with new line or space
+        public void load_stop_words(String stopWords, char[] sepCh)
         {
-            // Open file
-            StreamReader fReader = new StreamReader(filePath);
-
             // Parsing
-            char[] sepCh = new char[] { '\r', '\n', ' ' };
-            String[] wordList = fReader.ReadToEnd().Split(sepCh);
+            String[] wordList = stopWords.Split(sepCh);
             for(int i = 0; i < wordList.Length; i++)
             {
                 String tmp = wordList[i].ToLower().Trim();

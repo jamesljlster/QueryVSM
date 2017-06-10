@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace QueryVSM
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         bool titleFilter = false;
         bool authorFilter = false;
         bool abstractFilter = false;
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
 
