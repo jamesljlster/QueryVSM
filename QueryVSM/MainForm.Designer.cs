@@ -62,14 +62,14 @@
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.title_Msg = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.author_Msg = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.abstract_Msg = new System.Windows.Forms.TextBox();
             this.splitContainer7 = new System.Windows.Forms.SplitContainer();
             this.docCount_Label = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.title_Msg = new System.Windows.Forms.RichTextBox();
+            this.author_Msg = new System.Windows.Forms.RichTextBox();
+            this.abstract_Msg = new System.Windows.Forms.RichTextBox();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.Panel1.SuspendLayout();
@@ -498,7 +498,6 @@
             this.splitContainer3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer3.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer3.IsSplitterFixed = true;
             this.splitContainer3.Location = new System.Drawing.Point(0, 0);
             this.splitContainer3.Name = "splitContainer3";
             this.splitContainer3.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -527,18 +526,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Title";
             // 
-            // title_Msg
-            // 
-            this.title_Msg.BackColor = System.Drawing.Color.White;
-            this.title_Msg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.title_Msg.Location = new System.Drawing.Point(3, 18);
-            this.title_Msg.Multiline = true;
-            this.title_Msg.Name = "title_Msg";
-            this.title_Msg.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
-            this.title_Msg.Size = new System.Drawing.Size(228, 39);
-            this.title_Msg.TabIndex = 0;
-            this.title_Msg.WordWrap = false;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.author_Msg);
@@ -550,18 +537,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Author Information";
             // 
-            // author_Msg
-            // 
-            this.author_Msg.BackColor = System.Drawing.Color.White;
-            this.author_Msg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.author_Msg.Location = new System.Drawing.Point(3, 18);
-            this.author_Msg.Multiline = true;
-            this.author_Msg.Name = "author_Msg";
-            this.author_Msg.ReadOnly = true;
-            this.author_Msg.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.author_Msg.Size = new System.Drawing.Size(228, 50);
-            this.author_Msg.TabIndex = 1;
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.abstract_Msg);
@@ -572,18 +547,6 @@
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Abstract";
-            // 
-            // abstract_Msg
-            // 
-            this.abstract_Msg.BackColor = System.Drawing.Color.White;
-            this.abstract_Msg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.abstract_Msg.Location = new System.Drawing.Point(3, 18);
-            this.abstract_Msg.Multiline = true;
-            this.abstract_Msg.Name = "abstract_Msg";
-            this.abstract_Msg.ReadOnly = true;
-            this.abstract_Msg.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.abstract_Msg.Size = new System.Drawing.Size(228, 191);
-            this.abstract_Msg.TabIndex = 2;
             // 
             // splitContainer7
             // 
@@ -621,6 +584,43 @@
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(148, 25);
             this.flowLayoutPanel1.TabIndex = 0;
+            // 
+            // title_Msg
+            // 
+            this.title_Msg.BackColor = System.Drawing.Color.White;
+            this.title_Msg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.title_Msg.Location = new System.Drawing.Point(3, 18);
+            this.title_Msg.Name = "title_Msg";
+            this.title_Msg.ReadOnly = true;
+            this.title_Msg.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedHorizontal;
+            this.title_Msg.Size = new System.Drawing.Size(228, 39);
+            this.title_Msg.TabIndex = 1;
+            this.title_Msg.Text = "";
+            this.title_Msg.WordWrap = false;
+            // 
+            // author_Msg
+            // 
+            this.author_Msg.BackColor = System.Drawing.Color.White;
+            this.author_Msg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.author_Msg.Location = new System.Drawing.Point(3, 18);
+            this.author_Msg.Name = "author_Msg";
+            this.author_Msg.ReadOnly = true;
+            this.author_Msg.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.author_Msg.Size = new System.Drawing.Size(228, 50);
+            this.author_Msg.TabIndex = 0;
+            this.author_Msg.Text = "";
+            // 
+            // abstract_Msg
+            // 
+            this.abstract_Msg.BackColor = System.Drawing.Color.White;
+            this.abstract_Msg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.abstract_Msg.Location = new System.Drawing.Point(3, 18);
+            this.abstract_Msg.Name = "abstract_Msg";
+            this.abstract_Msg.ReadOnly = true;
+            this.abstract_Msg.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.abstract_Msg.Size = new System.Drawing.Size(228, 191);
+            this.abstract_Msg.TabIndex = 0;
+            this.abstract_Msg.Text = "";
             // 
             // MainForm
             // 
@@ -672,11 +672,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.splitContainer7.Panel1.ResumeLayout(false);
             this.splitContainer7.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).EndInit();
@@ -718,11 +715,8 @@
         private System.Windows.Forms.SplitContainer splitContainer5;
         private System.Windows.Forms.SplitContainer splitContainer6;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox title_Msg;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox author_Msg;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox abstract_Msg;
         private System.Windows.Forms.CheckedListBox docListBox;
         private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
@@ -731,6 +725,9 @@
         private System.Windows.Forms.SplitContainer splitContainer7;
         private System.Windows.Forms.Label docCount_Label;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.RichTextBox title_Msg;
+        private System.Windows.Forms.RichTextBox author_Msg;
+        private System.Windows.Forms.RichTextBox abstract_Msg;
     }
 }
 
