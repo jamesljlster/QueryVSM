@@ -168,6 +168,7 @@ namespace QueryVSM
             {
                 docListBox.Items.Add(docList[i].title);
             }
+            docCount_Label.Text = "Counts: " + docListBox.Items.Count.ToString();
             Console.WriteLine("Finish, Cost {0} ms", watch.ElapsedMilliseconds);
         }
 

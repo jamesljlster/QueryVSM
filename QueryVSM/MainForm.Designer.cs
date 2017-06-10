@@ -67,6 +67,9 @@
             this.author_Msg = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.abstract_Msg = new System.Windows.Forms.TextBox();
+            this.splitContainer7 = new System.Windows.Forms.SplitContainer();
+            this.docCount_Label = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.Panel1.SuspendLayout();
@@ -103,6 +106,11 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).BeginInit();
+            this.splitContainer7.Panel1.SuspendLayout();
+            this.splitContainer7.Panel2.SuspendLayout();
+            this.splitContainer7.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -444,7 +452,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.docListBox);
+            this.splitContainer1.Panel1.Controls.Add(this.splitContainer7);
             // 
             // splitContainer1.Panel2
             // 
@@ -455,13 +463,13 @@
             // 
             // docListBox
             // 
-            this.docListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.docListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.docListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.docListBox.FormattingEnabled = true;
             this.docListBox.HorizontalScrollbar = true;
             this.docListBox.Location = new System.Drawing.Point(0, 0);
             this.docListBox.Name = "docListBox";
-            this.docListBox.Size = new System.Drawing.Size(148, 373);
+            this.docListBox.Size = new System.Drawing.Size(148, 344);
             this.docListBox.TabIndex = 0;
             this.docListBox.SelectedIndexChanged += new System.EventHandler(this.docListBox_SelectedIndexChanged);
             // 
@@ -577,6 +585,43 @@
             this.abstract_Msg.Size = new System.Drawing.Size(228, 191);
             this.abstract_Msg.TabIndex = 2;
             // 
+            // splitContainer7
+            // 
+            this.splitContainer7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer7.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer7.Name = "splitContainer7";
+            this.splitContainer7.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer7.Panel1
+            // 
+            this.splitContainer7.Panel1.Controls.Add(this.docListBox);
+            // 
+            // splitContainer7.Panel2
+            // 
+            this.splitContainer7.Panel2.Controls.Add(this.flowLayoutPanel1);
+            this.splitContainer7.Size = new System.Drawing.Size(148, 373);
+            this.splitContainer7.SplitterDistance = 344;
+            this.splitContainer7.TabIndex = 0;
+            // 
+            // docCount_Label
+            // 
+            this.docCount_Label.AutoSize = true;
+            this.docCount_Label.Location = new System.Drawing.Point(5, 2);
+            this.docCount_Label.Name = "docCount_Label";
+            this.docCount_Label.Size = new System.Drawing.Size(50, 12);
+            this.docCount_Label.TabIndex = 1;
+            this.docCount_Label.Text = "Counts: 0";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.docCount_Label);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(148, 25);
+            this.flowLayoutPanel1.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -632,6 +677,12 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.splitContainer7.Panel1.ResumeLayout(false);
+            this.splitContainer7.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer7)).EndInit();
+            this.splitContainer7.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -677,6 +728,9 @@
         private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stopWordsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.SplitContainer splitContainer7;
+        private System.Windows.Forms.Label docCount_Label;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
 
