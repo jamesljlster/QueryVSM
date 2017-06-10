@@ -159,7 +159,19 @@ namespace QueryVSM
             {
                 Program.vsm.add_doc(this.docList[i].get_text());
             }
-            int[] docRankIndex = Program.vsm.get_ranked_doc_index(queryTerms);
+
+            int[] rankIndexList = Program.vsm.get_ranked_doc_index(queryTerms);
+            Console.WriteLine("Finish, Cost {0} ms", watch.ElapsedMilliseconds);
+
+            // Sort document list
+            Console.Write("Sort documents... ");
+            watch = System.Diagnostics.Stopwatch.StartNew();
+            List<DataPrep.DocInfo> tmpDocList = this.docList;
+            for (int i = 0; i < rankIndexList.Length; i++)
+            {
+                tmpDocList[i] = this.docList[rankIndexList[i]];
+            }
+            this.docList = tmpDocList;
             Console.WriteLine("Finish, Cost {0} ms", watch.ElapsedMilliseconds);
 
             // Processing document list
@@ -168,7 +180,7 @@ namespace QueryVSM
             docListBox.Items.Clear();
             for (int i = 0; i < this.docList.Count; i++)
             {
-                docListBox.Items.Add((i + 1).ToString() + ": " + docList[i].title);
+                docListBox.Items.Add((i + 1).ToString() + ": " + this.docList[i].title);
             }
             docCount_Label.Text = "Counts: " + docListBox.Items.Count.ToString();
             Console.WriteLine("Finish, Cost {0} ms", watch.ElapsedMilliseconds);
