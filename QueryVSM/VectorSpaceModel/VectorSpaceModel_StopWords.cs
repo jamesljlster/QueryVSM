@@ -37,7 +37,7 @@ namespace QueryVSM
             for (int i = 0; i < stopWordsList.Length; i++)
             {
                 String tmp = stopWordsList[i].ToLower().Trim();
-                if (tmp != null)
+                if (tmp.Length > 0)
                 {
                     if (!this.stopWords.Contains(tmp))
                     {
