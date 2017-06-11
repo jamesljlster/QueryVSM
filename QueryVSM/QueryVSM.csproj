@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D06481F9-4084-4D41-A4C0-4363C751FB04}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>QueryVSM</RootNamespace>
     <AssemblyName>QueryVSM</AssemblyName>
@@ -86,6 +86,9 @@
     </Compile>
     <Compile Include="Form\Form_Main.Designer.cs">
       <DependentUpon>Form_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Form_Main_Task.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form\Form_StopWords.cs">
       <SubType>Form</SubType>
