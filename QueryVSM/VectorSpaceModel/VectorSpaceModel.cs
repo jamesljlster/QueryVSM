@@ -34,8 +34,8 @@ namespace QueryVSM
         // Function: Add a documemtation
         public void add_doc(String doc)
         {
-            char[] trimCh = new char[] { ' ', '.', '?', ',', '\"', '\'', '!', '(', ')' };
-            char[] sepCh = new char[] { '\r', '\n', ' ' };
+            char[] trimCh = new char[] { ' ', '.', '?', ',', '\"', '\'', '!', '(', ')', ';', ':' };
+            char[] sepCh = new char[] { '\r', '\n', ' ', '-', '\\', '/' };
 
             // Parsing documemtation
             String[] wordList = doc.Split(sepCh);
