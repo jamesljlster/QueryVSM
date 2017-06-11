@@ -30,6 +30,8 @@
         {
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopWordsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,7 +53,7 @@
             this.authorFilter_Button = new System.Windows.Forms.Button();
             this.titleFilter_Button = new System.Windows.Forms.Button();
             this.splitContainer6 = new System.Windows.Forms.SplitContainer();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.start_Button = new System.Windows.Forms.Button();
             this.debugMsg = new System.Windows.Forms.TextBox();
@@ -70,8 +72,6 @@
             this.author_Msg = new System.Windows.Forms.RichTextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.abstract_Msg = new System.Windows.Forms.RichTextBox();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.saveSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
@@ -138,6 +138,18 @@
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.fileToolStripMenuItem.Text = "File";
+            // 
+            // saveSelectedToolStripMenuItem
+            // 
+            this.saveSelectedToolStripMenuItem.Name = "saveSelectedToolStripMenuItem";
+            this.saveSelectedToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.saveSelectedToolStripMenuItem.Text = "Save Checked Documents";
+            this.saveSelectedToolStripMenuItem.Click += new System.EventHandler(this.saveSelectedToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(217, 6);
             // 
             // closeToolStripMenuItem
             // 
@@ -379,7 +391,7 @@
             // 
             // splitContainer6.Panel1
             // 
-            this.splitContainer6.Panel1.Controls.Add(this.progressBar1);
+            this.splitContainer6.Panel1.Controls.Add(this.progressBar);
             this.splitContainer6.Panel1.Controls.Add(this.label1);
             this.splitContainer6.Panel1.Controls.Add(this.start_Button);
             // 
@@ -391,12 +403,12 @@
             this.splitContainer6.SplitterDistance = 72;
             this.splitContainer6.TabIndex = 0;
             // 
-            // progressBar1
+            // progressBar
             // 
-            this.progressBar1.Location = new System.Drawing.Point(5, 44);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(195, 23);
-            this.progressBar1.TabIndex = 2;
+            this.progressBar.Location = new System.Drawing.Point(5, 44);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(195, 23);
+            this.progressBar.TabIndex = 2;
             // 
             // label1
             // 
@@ -630,18 +642,6 @@
             this.abstract_Msg.TabIndex = 0;
             this.abstract_Msg.Text = "";
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(217, 6);
-            // 
-            // saveSelectedToolStripMenuItem
-            // 
-            this.saveSelectedToolStripMenuItem.Name = "saveSelectedToolStripMenuItem";
-            this.saveSelectedToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.saveSelectedToolStripMenuItem.Text = "Save Checked Documents";
-            this.saveSelectedToolStripMenuItem.Click += new System.EventHandler(this.saveSelectedToolStripMenuItem_Click);
-            // 
             // saveFileDialog
             // 
             this.saveFileDialog.DefaultExt = "txt";
@@ -730,7 +730,7 @@
         private System.Windows.Forms.Button titleFilter_Button;
         private System.Windows.Forms.Button start_Button;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.TextBox debugMsg;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage4;

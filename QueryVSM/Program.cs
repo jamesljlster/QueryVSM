@@ -32,7 +32,7 @@ namespace QueryVSM
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainForm());
         }
-
+        
         public static VectorSpaceModel vsm = new VectorSpaceModel();
 
         // Function: Highlight words in rich text box.

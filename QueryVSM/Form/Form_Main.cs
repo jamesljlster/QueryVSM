@@ -16,10 +16,10 @@ namespace QueryVSM
         bool titleFilter = false;
         bool authorFilter = false;
         bool abstractFilter = false;
-
+        
         List<DataPrep.DocInfo> docList;
-        String[] highlightWords = null;
-
+        String[] queryTerms = null;
+        
         public MainForm()
         {
             InitializeComponent();
@@ -75,118 +75,7 @@ namespace QueryVSM
             }
             abstractFilter_Button.Text = "Abstract: " + abstractFilter.ToString();
         }
-
-        private void start_Button_Click(object sender, EventArgs e)
-        {
-            // Process query terms
-            String queryTermsBak = queryTerms_Msg.Text;
-            String[] queryTermList = queryTermsBak.ToLower().Split(' ');
-            this.highlightWords = queryTermList;
-            String queryTerms = "";
-            for(int i = 0; i < queryTermList.Length; i++)
-            {
-                queryTerms += queryTermList[i].Trim();
-                if(i != queryTermList.Length - 1)
-                {
-                    queryTerms += "+";
-                }
-            }
-
-            if(queryTerms == "")
-            {
-                MessageBox.Show("Invalid query terms!", "Error");
-                return;
-            }
-
-            // Download documents
-            System.Diagnostics.Stopwatch watch;
-            Console.Write("Start downloading... ");
-            watch = System.Diagnostics.Stopwatch.StartNew();
-            
-            String xmlDoc = DataPrep.request_xml_docs(queryTerms, Convert.ToInt32(retMax_Num.Value), Convert.ToInt32(relDate_Num.Value));
-            Console.WriteLine("Finish, Cost {0} ms", watch.ElapsedMilliseconds);
-
-            Console.Write("Parsing... ");
-            watch = System.Diagnostics.Stopwatch.StartNew();
-            this.docList = DataPrep.parse_xml_docs(xmlDoc);
-            Console.WriteLine("Finish, Cost {0} ms", watch.ElapsedMilliseconds);
-
-            // Processing document filter
-            Console.Write("Processing document filter... ");
-            watch = System.Diagnostics.Stopwatch.StartNew();
-            if(titleFilter)
-            {
-                for(int i = 0; i < this.docList.Count; i++)
-                {
-                    if(docList[i].title.Length <= 0)
-                    {
-                        docList.RemoveAt(i);
-                        i--;
-                    }
-                }
-            }
-
-            if(authorFilter)
-            {
-                for (int i = 0; i < this.docList.Count; i++)
-                {
-                    if (docList[i].authorInfo.Length <= 0)
-                    {
-                        docList.RemoveAt(i);
-                        i--;
-                    }
-                }
-            }
-
-            if (abstractFilter)
-            {
-                for (int i = 0; i < this.docList.Count; i++)
-                {
-                    if (docList[i].abstractText.Length <= 0)
-                    {
-                        docList.RemoveAt(i);
-                        i--;
-                    }
-                }
-            }
-
-            Console.WriteLine("Finish, Cost {0} ms", watch.ElapsedMilliseconds);
-            
-            // Processing vector space model
-            Console.Write("Processing VSM... ");
-            watch = System.Diagnostics.Stopwatch.StartNew();
-            Program.vsm.restart();
-            for(int i = 0; i < this.docList.Count; i++)
-            {
-                Program.vsm.add_doc(this.docList[i].get_text());
-            }
-
-            int[] rankIndexList = Program.vsm.get_ranked_doc_index(queryTerms);
-            Console.WriteLine("Finish, Cost {0} ms", watch.ElapsedMilliseconds);
-
-            // Sort document list
-            Console.Write("Sort documents... ");
-            watch = System.Diagnostics.Stopwatch.StartNew();
-            List<DataPrep.DocInfo> tmpDocList = this.docList;
-            for (int i = 0; i < rankIndexList.Length; i++)
-            {
-                tmpDocList[i] = this.docList[rankIndexList[i]];
-            }
-            this.docList = tmpDocList;
-            Console.WriteLine("Finish, Cost {0} ms", watch.ElapsedMilliseconds);
-
-            // Processing document list
-            Console.Write("Processing document list... ");
-            watch = System.Diagnostics.Stopwatch.StartNew();
-            docListBox.Items.Clear();
-            for (int i = 0; i < this.docList.Count; i++)
-            {
-                docListBox.Items.Add((i + 1).ToString() + ": " + this.docList[i].title);
-            }
-            docCount_Label.Text = "Counts: " + docListBox.Items.Count.ToString();
-            Console.WriteLine("Finish, Cost {0} ms", watch.ElapsedMilliseconds);
-        }
-
+        
         private void docListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Print document detail to right panel
@@ -206,13 +95,13 @@ namespace QueryVSM
             }
 
             // Highlighting
-            if(this.highlightWords != null)
+            if(this.queryTerms != null)
             {
-                for(int i = 0; i < this.highlightWords.Length; i++)
+                for(int i = 0; i < this.queryTerms.Length; i++)
                 {
-                    title_Msg.highlight(this.highlightWords[i], Color.Red, Color.Yellow);
-                    author_Msg.highlight(this.highlightWords[i], Color.Red, Color.Yellow);
-                    abstract_Msg.highlight(this.highlightWords[i], Color.Red, Color.Yellow);
+                    title_Msg.highlight(this.queryTerms[i], Color.Red, Color.Yellow);
+                    author_Msg.highlight(this.queryTerms[i], Color.Red, Color.Yellow);
+                    abstract_Msg.highlight(this.queryTerms[i], Color.Red, Color.Yellow);
                 }
             }
         }
