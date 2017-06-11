@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace QueryVSM
 {
@@ -225,6 +226,41 @@ namespace QueryVSM
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void saveSelectedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(docListBox.CheckedIndices.Count > 0)
+            {
+                if(saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    StreamWriter fWriter;
+
+                    try
+                    {
+                        // Write checked documents
+                        fWriter = new StreamWriter(saveFileDialog.FileName);
+                        for(int i = 0; i < docListBox.CheckedIndices.Count; i++)
+                        {
+                            int indexTmp = docListBox.CheckedIndices[i];
+                            fWriter.Write((indexTmp + 1).ToString() + ". ");
+                            fWriter.Write(docList[indexTmp].ToString());
+                            fWriter.WriteLine();
+                        }
+
+                        fWriter.Flush();
+                        fWriter.Close();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Failed to write file!", "Error");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("No documents checked!", "Error");
+            }
         }
     }
 }

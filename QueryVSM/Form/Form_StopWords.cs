@@ -163,23 +163,21 @@ namespace QueryVSM
             {
                 StreamWriter fWriter;
 
-                // Open file
+                // Open and write file
                 try
                 {
                     fWriter = new StreamWriter(saveFileDialog.FileName, false);
+                    for (int i = 0; i < this.stopWords.Count; i++)
+                    {
+                        fWriter.WriteLine(stopWords[i]);
+                    }
                 }
                 catch (Exception)
                 {
                     MessageBox.Show("Failed to export stop words!", "Error");
                     return;
                 }
-
-                // Write file
-                for(int i = 0; i < this.stopWords.Count; i++)
-                {
-                    fWriter.WriteLine(stopWords[i]);
-                }
-
+                
                 fWriter.Flush();
                 fWriter.Close();
             }

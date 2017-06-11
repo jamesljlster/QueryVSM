@@ -146,6 +146,11 @@
             // 
             this.openFileDialog.FileName = "StopWords.txt";
             // 
+            // saveFileDialog
+            // 
+            this.saveFileDialog.DefaultExt = "txt";
+            this.saveFileDialog.Filter = "文字檔 (*.txt)|*.txt|所有檔案 (*.*)|*.*";
+            // 
             // Form_StopWords
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
