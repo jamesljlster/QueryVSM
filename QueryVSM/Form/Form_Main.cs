@@ -219,7 +219,7 @@ namespace QueryVSM
         private void stopWordsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form form = new Form_StopWords();
-            form.Show();
+            form.ShowDialog();
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
