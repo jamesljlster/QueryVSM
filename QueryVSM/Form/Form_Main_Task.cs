@@ -18,6 +18,20 @@ namespace QueryVSM
 
         private delegate void SetChkBoxList(CheckedListBox dst, CheckedListBox src);
         private delegate void SetUIText(Control ctrl, String str);
+        private delegate void SetProgBar(ProgressBar progBar, int status);
+
+        private void set_prog_bar(ProgressBar progBar, int status)
+        {
+            if(this.InvokeRequired)
+            {
+                SetProgBar setProgBar = new SetProgBar(set_prog_bar);
+                this.Invoke(setProgBar, progBar, status);
+            }
+            else
+            {
+                progBar.Value = status;
+            }
+        }
 
         private void set_chk_box_list(CheckedListBox dst, CheckedListBox src)
         {
@@ -49,6 +63,7 @@ namespace QueryVSM
             }
         }
         
+        // Function: Combine time string
         private String get_time_str()
         {
             return "[ " + 
@@ -58,6 +73,7 @@ namespace QueryVSM
                 " ] ";
         }
 
+        // Function: Query task
         private void query_task(object obj)
         {
             List<DataPrep.DocInfo> webDocList = new List<DataPrep.DocInfo>();
@@ -69,32 +85,37 @@ namespace QueryVSM
             try
             {
                 set_ui_text(debugMsg, debugMsg.Text + this.get_time_str() + "Start downloading...\r\n");
+                set_prog_bar(progressBar, 5);
                 Console.Write("Start downloading... ");
                 watch = System.Diagnostics.Stopwatch.StartNew();
 
                 xmlDoc = DataPrep.request_xml_docs(queryTerms, Convert.ToInt32(retMax_Num.Value), Convert.ToInt32(relDate_Num.Value));
                 set_ui_text(debugMsg, debugMsg.Text + this.get_time_str() + "Finish, Cost " + watch.ElapsedMilliseconds.ToString() + " ms\r\n");
+                set_prog_bar(progressBar, 20);
                 Console.WriteLine("Finish, Cost {0} ms", watch.ElapsedMilliseconds);
             }
             catch(Exception)
             {
                 set_ui_text(debugMsg, debugMsg.Text + this.get_time_str() + "Download failed!\r\n");
+                set_prog_bar(progressBar, 0);
                 return;
             }
 
             // Parsing documents
             try
             {
-                Console.Write("Parsing... ");
+                set_ui_text(debugMsg, debugMsg.Text + this.get_time_str() + "Parsing documents...\r\n");
                 Console.Write("Parsing documents...");
                 watch = System.Diagnostics.Stopwatch.StartNew();
                 webDocList = DataPrep.parse_xml_docs(xmlDoc);
                 set_ui_text(debugMsg, debugMsg.Text + this.get_time_str() + "Finish, Cost " + watch.ElapsedMilliseconds.ToString() + " ms\r\n");
+                set_prog_bar(progressBar, 40);
                 Console.WriteLine("Finish, Cost {0} ms", watch.ElapsedMilliseconds);
             }
             catch (Exception)
             {
                 set_ui_text(debugMsg, debugMsg.Text + this.get_time_str() + "Parsing failed!\r\n");
+                set_prog_bar(progressBar, 0);
                 return;
             }
 
@@ -139,6 +160,7 @@ namespace QueryVSM
             }
 
             set_ui_text(debugMsg, debugMsg.Text + this.get_time_str() + "Finish, Cost " + watch.ElapsedMilliseconds.ToString() + " ms\r\n");
+            set_prog_bar(progressBar, 60);
             Console.WriteLine("Finish, Cost {0} ms", watch.ElapsedMilliseconds);
 
             // Processing vector space model
@@ -165,6 +187,7 @@ namespace QueryVSM
                     tmpDocList.Add(webDocList[rankIndexList[i]]);
                 }
                 set_ui_text(debugMsg, debugMsg.Text + this.get_time_str() + "Finish, Cost " + watch.ElapsedMilliseconds.ToString() + " ms\r\n");
+                set_prog_bar(progressBar, 80);
                 Console.WriteLine("Finish, Cost {0} ms", watch.ElapsedMilliseconds);
             }
 
@@ -187,6 +210,7 @@ namespace QueryVSM
 
             // Query task finished
             set_ui_text(debugMsg, debugMsg.Text + this.get_time_str() + "Query finished.\r\n");
+            set_prog_bar(progressBar, 100);
             set_ui_text(start_Button, "Start Query");
         }
 
@@ -198,6 +222,7 @@ namespace QueryVSM
                 queryThread.Abort();
                 debugMsg.Text += this.get_time_str() + "Query aborted.\r\n";
                 start_Button.Text = "Start Query";
+                progressBar.Value = 0;
             }
             else
             {
@@ -226,6 +251,7 @@ namespace QueryVSM
                 queryThread.Start(queryTermStr);
                 debugMsg.Text += "\r\n" + this.get_time_str() + "Query started.\r\n";
                 start_Button.Text = "Abort Query";
+                progressBar.Value = 0;
             }
         }
     }
