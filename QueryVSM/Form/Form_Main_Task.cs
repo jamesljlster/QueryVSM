@@ -177,11 +177,8 @@ namespace QueryVSM
                 }
 
                 int[] rankIndexList = Program.vsm.get_ranked_doc_index(queryTerms);
-                Console.WriteLine("Finish, Cost {0} ms", watch.ElapsedMilliseconds);
 
                 // Sort document list
-                Console.Write("Sort documents... ");
-                watch = System.Diagnostics.Stopwatch.StartNew();
                 for (int i = 0; i < rankIndexList.Length; i++)
                 {
                     tmpDocList.Add(webDocList[rankIndexList[i]]);

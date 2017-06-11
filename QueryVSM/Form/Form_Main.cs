@@ -151,5 +151,13 @@ namespace QueryVSM
                 MessageBox.Show("No documents checked!", "Error");
             }
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+                "Author: Zheng-Ling Lai <jamesljlster@gmail.com>\r\n\r\nThis is my final project for C# Window Programming class.",
+                "About"
+            );
+        }
     }
 }
