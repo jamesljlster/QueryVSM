@@ -49,6 +49,7 @@ namespace QueryVSM
             }
 
             // Change text to lower case
+            richTextBox.Text = " " + richTextBox.Text;      // Add a space to prevent wrongly highlighting
             String lCaseString = richTextBox.Text.ToLower();
 
             // Backup
@@ -70,6 +71,7 @@ namespace QueryVSM
 
             // Restore
             richTextBox.SelectionStart = selIndex;
+            richTextBox.SelectionLength = 0;
             richTextBox.SelectionColor = fColorBak;
             richTextBox.SelectionBackColor = bColorBak;
         }
