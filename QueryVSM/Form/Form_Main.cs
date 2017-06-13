@@ -81,17 +81,17 @@ namespace QueryVSM
             // Print document detail to right panel
             if (docList[docListBox.SelectedIndex].title != null)
             {
-                title_Msg.Text = docList[docListBox.SelectedIndex].title;
+                title_Msg.Text = " " + docList[docListBox.SelectedIndex].title;
             }
 
             if (docList[docListBox.SelectedIndex].authorInfo != null)
             {
-                author_Msg.Text = docList[docListBox.SelectedIndex].authorInfo;
+                author_Msg.Text = " " + docList[docListBox.SelectedIndex].authorInfo;
             }
 
             if (docList[docListBox.SelectedIndex].abstractText != null)
             {
-                abstract_Msg.Text = docList[docListBox.SelectedIndex].abstractText;
+                abstract_Msg.Text = " " + docList[docListBox.SelectedIndex].abstractText;
             }
 
             // Highlighting

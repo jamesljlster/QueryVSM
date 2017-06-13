@@ -43,37 +43,17 @@ namespace QueryVSM
             {
                 return;
             }
-            else
-            {
-                word = word.ToLower();
-            }
-
-            // Change text to lower case
-            richTextBox.Text = " " + richTextBox.Text;      // Add a space to prevent wrongly highlighting
-            String lCaseString = richTextBox.Text.ToLower();
-
-            // Backup
-            int selIndex = richTextBox.SelectionStart;
-            Color fColorBak = richTextBox.SelectionColor;
-            Color bColorBak = richTextBox.SelectionBackColor;
-
+            
             // Searching
             int procIndex = 0;
-            int tmpIndex;
-            while((tmpIndex = lCaseString.IndexOf(word, procIndex)) >= 0)
+            while ((procIndex = richTextBox.Find(word, procIndex, RichTextBoxFinds.WholeWord)) >= 0)
             {
-                richTextBox.Select(tmpIndex, word.Length);
+                richTextBox.Select(procIndex, word.Length);
                 richTextBox.SelectionBackColor = backColor;
                 richTextBox.SelectionColor = foreColor;
 
                 procIndex += word.Length;
             }
-
-            // Restore
-            richTextBox.SelectionStart = selIndex;
-            richTextBox.SelectionLength = 0;
-            richTextBox.SelectionColor = fColorBak;
-            richTextBox.SelectionBackColor = bColorBak;
         }
     }
 }
