@@ -262,25 +262,31 @@ namespace QueryVSM
         {
             if (queryThread != null && queryThread.IsAlive)
             {
-                lock (this.getDocThread)
+                if (this.getDocThread != null)
                 {
-                    // Cancel download document thread
-                    if(this.getDocThread != null)
+                    lock (this.getDocThread)
                     {
-                        for(int i = 0; i < this.getDocThread.Length; i++)
+                        // Cancel download document thread
+                        if (this.getDocThread != null)
                         {
-                            this.getDocThread[i].Abort();
+                            for (int i = 0; i < this.getDocThread.Length; i++)
+                            {
+                                if (this.getDocThread[i].IsAlive)
+                                {
+                                    this.getDocThread[i].Abort();
+                                }
+                            }
                         }
                     }
-
-                    // Cancle thread
-                    queryThread.Abort();
-                    this.getDocThread = null;
-
-                    debugMsg.Text += this.get_time_str() + "Query aborted.\r\n";
-                    start_Button.Text = "Start Query";
-                    progressBar.Value = 0;
                 }
+
+                // Cancle thread
+                queryThread.Abort();
+                this.getDocThread = null;
+
+                debugMsg.Text += this.get_time_str() + "Query aborted.\r\n";
+                start_Button.Text = "Start Query";
+                progressBar.Value = 0;
             }
             else
             {
