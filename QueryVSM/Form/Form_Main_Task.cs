@@ -120,7 +120,11 @@ namespace QueryVSM
         {
             List<DataPrep.DocInfo> webDocList = new List<DataPrep.DocInfo>();
             System.Diagnostics.Stopwatch watch;
-            String[] queryTermList = (String[])obj;
+
+            // Convert argument
+            List<object> args = (List<object>)obj;
+            String[] docTermList = (String[])args[0];
+            String[] queryTermList = (String[])args[1];
 
             /** Download documents **/
             // Set ui text and start watch
@@ -129,13 +133,13 @@ namespace QueryVSM
             watch = System.Diagnostics.Stopwatch.StartNew();
 
             // Prepare thread
-            List<object>[] threadArg = new List<object>[queryTermList.Length];
-            this.getDocThread = new Thread[queryTermList.Length];
+            List<object>[] threadArg = new List<object>[docTermList.Length];
+            this.getDocThread = new Thread[docTermList.Length];
             for(int i = 0; i < threadArg.Length; i++)
             {
                 // Set argument
                 threadArg[i] = new List<object>();
-                threadArg[i].Add(queryTermList[i]);
+                threadArg[i].Add(docTermList[i]);
                 threadArg[i].Add(webDocList);
 
                 // Run thread
@@ -290,8 +294,8 @@ namespace QueryVSM
             }
             else
             {
-                // Process query terms
-                String tmpStr = queryTerms_Msg.Text.ToLower().Trim();
+                // Process search terms
+                String tmpStr = searchTerms_Msg.Text.ToLower().Trim();
                 if(tmpStr == "")
                 {
                     MessageBox.Show("Invalid query terms!", "Error");
@@ -304,20 +308,48 @@ namespace QueryVSM
                     queryTermList[i] = queryTermList[i].Trim();
                 }
                 
-                // Check if query terms are stop words
+                // Check if search terms are stop words
                 for (int i = 0; i < queryTermList.Length; i++)
                 {
                     if(Program.vsm.get_stop_words().Contains(queryTermList[i]))
                     {
-                        MessageBox.Show("Don't query stop words!", "Error");
+                        MessageBox.Show("Don't search stop words!", "Error");
                         return;
                     }
                 }
                 this.queryTerms = queryTermList;
 
+                // Process query terms
+                tmpStr = queryTerms_Msg.Text.ToLower().Trim();
+                if (tmpStr == "")
+                {
+                    MessageBox.Show("Invalid query terms!", "Error");
+                    return;
+                }
+
+                String[] docTermList = tmpStr.Split(' ');
+                for (int i = 0; i < docTermList.Length; i++)
+                {
+                    docTermList[i] = docTermList[i].Trim();
+                }
+
+                // Check if query terms are stop words
+                for (int i = 0; i < docTermList.Length; i++)
+                {
+                    if (Program.vsm.get_stop_words().Contains(docTermList[i]))
+                    {
+                        MessageBox.Show("Don't query stop words!", "Error");
+                        return;
+                    }
+                }
+
                 // Start background task
+                List<object> thArg = new List<object>();
+                thArg.Add(docTermList);
+                thArg.Add(queryTermList);
+
                 queryThread = new Thread(query_task);
-                queryThread.Start(queryTermList);
+                queryThread.Start(thArg);
                 debugMsg.Text += "\r\n" + this.get_time_str() + "Query started.\r\n";
                 start_Button.Text = "Abort Query";
                 progressBar.Value = 0;

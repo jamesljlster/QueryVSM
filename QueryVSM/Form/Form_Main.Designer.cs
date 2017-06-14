@@ -73,6 +73,8 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.abstract_Msg = new System.Windows.Forms.RichTextBox();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.label3 = new System.Windows.Forms.Label();
+            this.searchTerms_Msg = new System.Windows.Forms.TextBox();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.Panel1.SuspendLayout();
@@ -246,6 +248,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.searchTerms_Msg);
+            this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.queryTerms_Msg);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -648,6 +652,22 @@
             this.saveFileDialog.DefaultExt = "txt";
             this.saveFileDialog.Filter = "文字檔 (*.txt)|*.txt|所有檔案 (*.*)|*.*";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 43);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(156, 12);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Search terms separated by space:";
+            // 
+            // searchTerms_Msg
+            // 
+            this.searchTerms_Msg.Location = new System.Drawing.Point(6, 58);
+            this.searchTerms_Msg.Name = "searchTerms_Msg";
+            this.searchTerms_Msg.Size = new System.Drawing.Size(175, 22);
+            this.searchTerms_Msg.TabIndex = 4;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -757,6 +777,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem saveSelectedToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.TextBox searchTerms_Msg;
+        private System.Windows.Forms.Label label3;
     }
 }
 
